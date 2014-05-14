@@ -6,6 +6,13 @@ A simple memory game for Android based on libGDX
 Find it on Google Play here: 
 https://play.google.com/store/apps/details?id=at.juggle.games.memory
 
+How to compile it
+-----------------
+I'm using IDEA to create three modules: main, desktop, and android.
+Dependencies are the repective libraries in the sub directories, and for
+desktop and android you'll need the main module. Make sure to tick "export" for
+the libs in the main module.
+
 License
 -------
 
