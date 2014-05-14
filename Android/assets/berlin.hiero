@@ -1,0 +1,26 @@
+font.size=42
+font.bold=true
+font.italic=false
+
+pad.top=0
+pad.right=1
+pad.bottom=0
+pad.left=1
+pad.advance.x=0
+pad.advance.y=0
+
+glyph.native.rendering=false
+glyph.page.width=512
+glyph.page.height=512
+
+effect.class=com.badlogic.gdx.hiero.unicodefont.effects.ColorEffect
+effect.Color=ffffff
+
+effect.class=com.badlogic.gdx.hiero.unicodefont.effects.ShadowEffect
+effect.Color=0000ff
+effect.Opacity=0.7
+effect.X distance=0.1
+effect.Y distance=2.0
+effect.Blur kernel size=0
+effect.Blur passes=1
+
