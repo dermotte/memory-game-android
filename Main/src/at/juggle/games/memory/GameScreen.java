@@ -122,7 +122,7 @@ public class GameScreen extends AbstractScreen {
         // draw time and moves ...
         if (model.introAnimation < 0 & !model.finished) {
             String moves = model.numberOfMoves + " tries";
-            int secs = (int) Math.floor(model.time);
+            int secs = ((int) Math.floor(model.time)) % 60;
             int min = secs / 60;
             String timeString = min + ":" + (secs < 10 ? "0" : "") + secs;
             assets.font.draw(spriteBatch, moves, MemoryGame.WIDTH - assets.font.getBounds(moves).width - 10, offset + assets.font.getLineHeight());
