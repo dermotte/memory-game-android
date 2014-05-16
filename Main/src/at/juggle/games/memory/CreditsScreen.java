@@ -35,31 +35,20 @@ public class CreditsScreen extends AbstractScreen{
             "Many thanks to the libGdx project\n" +
             "http://libgdx.badlogicgames.com/\n" +
             "\n" +
+            "This game is licensed under \n" +
+            "Apache License v2.0\n" +
+            "Find it at at github:\n" +
+            "dermotte/memory-game-android\n" +
+            "\n" +
             "** Visuals:\n" +
             "\n" +
             "Animal, vacation, positive\n" +
             "& check icons by\n" +
             "www.visualpharm.com\n" +
             "\n" +
-            "Background by webtreats\n" +
-            "http://flic.kr/p/9o6HHb\n" +
-            "\n" +
             "Vehicles by cemagraphics (cc)\n" +
             "http://cemagraphics.deviantart.com/\n" +
-            "\n" +
-            "** Sounds:\n" +
-            "\n" +
-            "flipCard.wav by Splashdust (cc)\n" +
-            "http://goo.gl/O66Yw\n" +
-            "\n" +
-            "Cheering by Tomlija (cc)\n" +
-            "http://goo.gl/RRTc2\n" +
-            "\n" +
-            "Ding by Traveller (cc)\n" +
-            "http://goo.gl/yzeKo\n" +
-            "\n" +
-            "All sounds from\n" +
-            "http://www.freesound.org";
+            "\n";
     String[] creditsLines = credits.split("\\n");
     BitmapFont font = assets.font;
     float offset = - (creditsLines.length) * font.getLineHeight();

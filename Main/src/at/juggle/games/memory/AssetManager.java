@@ -42,7 +42,7 @@ public class AssetManager {
     public TextureRegion[] icons;
     public Texture grey, background;
     public Texture gradientTop, gradientBottom;
-    public Texture logo, donate;
+    public Texture logo;
     public ParticleEffect fireworks;
     public Sound sndFlipCard, sndCheer, sndDing;
 
@@ -69,12 +69,10 @@ public class AssetManager {
         } else {
             logo = new Texture(getFileHandle("Logo_donated.png"));
         }
-        donate = new Texture(getFileHandle("donate.png"));
 
         cardBack.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         cardBackMark.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         logo.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        donate.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 
         Texture vehiclesTexture = new Texture(getFileHandle("vehicles.png"));
         vehiclesTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
@@ -105,7 +103,7 @@ public class AssetManager {
         
         // sounds
         sndFlipCard = Gdx.audio.newSound(getFileHandle("flipcard.ogg"));
-        sndCheer = Gdx.audio.newSound(getFileHandle("cheer.ogg"));
+        sndCheer = Gdx.audio.newSound(getFileHandle("drums.ogg"));
         sndDing = Gdx.audio.newSound(getFileHandle("ding.ogg"));
     }
 

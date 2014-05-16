@@ -64,7 +64,7 @@ public class MemoryGame implements ApplicationListener{
     }
 
     public void resize(int i, int i1) {
-        // Todo: implement ...
+
     }
 
     public void render() {

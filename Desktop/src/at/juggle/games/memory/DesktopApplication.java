@@ -27,11 +27,11 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 public class DesktopApplication {
     public static void main(String[] argv) {
         LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
-        cfg.title = "Picture Wars";
+        cfg.title = "Memory HD";
         // cfg.useGL20 = true;
-        cfg.width = 1920;
-        cfg.height = 1080;
-        cfg.fullscreen = true;
+        cfg.width = 1280;
+        cfg.height = 720;
+//        cfg.fullscreen = true;
         new LwjglApplication(new MemoryGame(), cfg);
 //        new LwjglApplication(new MemoryGame(), "Memory", 1280, 800, false);
     }

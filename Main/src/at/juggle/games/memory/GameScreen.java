@@ -123,7 +123,7 @@ public class GameScreen extends AbstractScreen {
         if (model.introAnimation < 0 & !model.finished) {
             String moves = model.numberOfMoves + " tries";
             int secs = ((int) Math.floor(model.time)) % 60;
-            int min = secs / 60;
+            int min = ((int) Math.floor(model.time)) / 60;
             String timeString = min + ":" + (secs < 10 ? "0" : "") + secs;
             assets.font.draw(spriteBatch, moves, MemoryGame.WIDTH - assets.font.getBounds(moves).width - 10, offset + assets.font.getLineHeight());
             assets.font.draw(spriteBatch, timeString, MemoryGame.WIDTH - assets.font.getBounds(timeString).width - 10, offset + assets.font.getLineHeight() * 2);
@@ -137,8 +137,8 @@ public class GameScreen extends AbstractScreen {
             assets.font.draw(spriteBatch, "Congratulations!",
                     MemoryGame.WIDTH / 2 - assets.font.getBounds("Congratulations!").width / 2,
                     MemoryGame.HEIGHT - assets.font.getBounds("Congratulations!").height);
-            int secs = (int) Math.floor(model.time);
-            int min = secs / 60;
+            int secs = ((int) Math.floor(model.time)) % 60;
+            int min = ((int) Math.floor(model.time)) / 60;
             String timeString = "Solved in " + min + ":" + (secs < 10 ? "0" : "") + secs + " and " + model.numberOfMoves + " tries";
             assets.smallFont.draw(spriteBatch, timeString,
                     MemoryGame.WIDTH / 2 - assets.smallFont.getBounds(timeString).width / 2,
