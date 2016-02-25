@@ -8,15 +8,19 @@ https://play.google.com/store/apps/details?id=at.juggle.games.memory
 
 How to compile it
 -----------------
-I'm using IDEA to create three modules: main, desktop, and android.
-Dependencies are the repective libraries in the sub directories, and for
-desktop and android you'll need the main module. Make sure to tick "export" for
-the libs in the main module.
+Either import the project in Android Studio, or use  gradle to create 
+releases for desktop, android or web:
+
+$> gradlew desktop:dist
+
+$> gradlew android:assembleRelease
+
+$> gradlew html:dist
 
 License
 -------
 
-Copyright 2012-2014 Mathias Lux, mathias@juggle.at
+Copyright 2012-2016 Mathias Lux, mathias@juggle.at
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
