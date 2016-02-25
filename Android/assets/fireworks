@@ -2,33 +2,50 @@ fireworks
 - Delay -
 active: false
 - Duration - 
-lowMin: 1500.0
-lowMax: 1500.0
+lowMin: 3000.0
+lowMax: 3000.0
 - Count - 
 min: 0
-max: 480
+max: 1024
 - Emission - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 400.0
-highMax: 400.0
+highMax: 200.0
 relative: false
-scalingCount: 1
-scaling0: 1.0
-timelineCount: 1
+scalingCount: 3
+scaling0: 0.0
+scaling1: 1.0
+scaling2: 0.0
+timelineCount: 3
 timeline0: 0.0
+timeline1: 0.05479452
+timeline2: 1.0
 - Life - 
 lowMin: 750.0
 lowMax: 750.0
-highMin: 1500.0
-highMax: 1500.0
+highMin: 3000.0
+highMax: 3000.0
 relative: false
-scalingCount: 1
-scaling0: 0.5882353
-timelineCount: 1
+scalingCount: 2
+scaling0: 1.0
+scaling1: 0.0
+timelineCount: 2
 timeline0: 0.0
+timeline1: 1.0
 - Life Offset - 
-active: false
+active: true
+lowMin: 0.0
+lowMax: 0.0
+highMin: 200.0
+highMax: 200.0
+relative: false
+scalingCount: 2
+scaling0: 1.0
+scaling1: 0.0
+timelineCount: 2
+timeline0: 0.0
+timeline1: 1.0
 - X Offset - 
 active: false
 - Y Offset - 
@@ -86,10 +103,10 @@ timeline1: 0.30821916
 timeline2: 0.89726025
 - Angle - 
 active: true
-lowMin: 70.0
-lowMax: 110.0
-highMin: 70.0
-highMax: 110.0
+lowMin: 50.0
+lowMax: 130.0
+highMin: 50.0
+highMax: 130.0
 relative: false
 scalingCount: 2
 scaling0: 0.4509804
@@ -105,7 +122,7 @@ highMin: 180.0
 highMax: 180.0
 relative: true
 scalingCount: 2
-scaling0: 0.0
+scaling0: 0.627451
 scaling1: 1.0
 timelineCount: 2
 timeline0: 0.0
@@ -116,13 +133,17 @@ active: false
 active: true
 lowMin: 0.0
 lowMax: 0.0
-highMin: 25.0
-highMax: 25.0
+highMin: 2.0
+highMax: 2.0
 relative: true
-scalingCount: 1
-scaling0: 1.0
-timelineCount: 1
+scalingCount: 3
+scaling0: 0.0
+scaling1: 1.0
+scaling2: 0.0
+timelineCount: 3
 timeline0: 0.0
+timeline1: 0.5
+timeline2: 1.0
 - Tint - 
 colorsCount: 3
 colors0: 1.0
@@ -152,5 +173,6 @@ continuous: false
 aligned: false
 additive: true
 behind: false
+premultipliedAlpha: false
 - Image Path -
-C:\Java\Projects\Memory\src\assets\fire.png
+fire.png

@@ -19,6 +19,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
@@ -39,6 +40,8 @@ public class GameScreen extends AbstractScreen {
     private float cardX, cardY;
     private float cardHeight;
 
+    private ParticleEffect fireworksLeft, fireworksRight;
+
     GlyphLayout fontLayout = new GlyphLayout();
 
     public GameScreen(AssetManager assets) {
@@ -50,6 +53,8 @@ public class GameScreen extends AbstractScreen {
         numRows = assets.options.getNumberOfRows();
         numCols = assets.options.getNumberOfCols();
         assets.shuffleIcons();
+        fireworksLeft = new ParticleEffect(assets.fireworks);
+        fireworksRight = new ParticleEffect(assets.fireworks);
     }
 
     @Override
@@ -137,7 +142,14 @@ public class GameScreen extends AbstractScreen {
 //        spriteBatch.draw(assets.undo, MemoryGame.WIDTH - assets.undo.getWidth() - 10, MemoryGame.HEIGHT - assets.undo.getHeight() - 10);
 
         if (model.finished) {
+
             spriteBatch.draw(assets.grey, 0, 0, MemoryGame.WIDTH, MemoryGame.HEIGHT);
+
+            fireworksLeft.findEmitter("fireworks").setPosition(MemoryGame.WIDTH /4, 0);
+            fireworksLeft.findEmitter("fireworks").draw(spriteBatch, Gdx.graphics.getDeltaTime());
+            fireworksRight.findEmitter("fireworks").setPosition(3*MemoryGame.WIDTH /4, 0);
+            fireworksRight.findEmitter("fireworks").draw(spriteBatch, Gdx.graphics.getDeltaTime());
+
             spriteBatch.draw(assets.positive, MemoryGame.WIDTH / 2 - assets.positive.getWidth() / 2, MemoryGame.HEIGHT / 2 - assets.positive.getHeight() / 2);
 //            assets.font.getData().scale(2f);
             assets.font.draw(spriteBatch, "Congratulations!",
@@ -151,8 +163,6 @@ public class GameScreen extends AbstractScreen {
                     MemoryGame.WIDTH / 2 - getStringWidth(assets.smallFont, timeString) / 2,
                     assets.smallFont.getLineHeight() * 2);
 
-            assets.fireworks.findEmitter("fireworks").setPosition(MemoryGame.WIDTH - 100, 0);
-            assets.fireworks.findEmitter("fireworks").draw(spriteBatch, Gdx.graphics.getDeltaTime());
         }
 
         spriteBatch.end();
@@ -303,7 +313,8 @@ public class GameScreen extends AbstractScreen {
                 finished = finished & state[i] == 3;
             }
             if (finished) {
-                assets.fireworks.start();
+                fireworksLeft.start();
+                fireworksRight.start();
                 if (assets.options.soundOn) assets.sndCheer.play();
             }
         }

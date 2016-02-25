@@ -29,8 +29,8 @@ import java.util.Collections;
 
 /**
  * @author Mathias Lux, mathias@juggle.at
- * Date: 13.02.12
- * Time: 10:07
+ *         Date: 13.02.12
+ *         Time: 10:07
  */
 public class AssetManager {
     private String prefix = "assets/";
@@ -76,8 +76,8 @@ public class AssetManager {
 
         Texture vehiclesTexture = new Texture(getFileHandle("vehicles.png"));
         vehiclesTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        TextureRegion[][] veh = TextureRegion.split(vehiclesTexture,  256, 256);
-        
+        TextureRegion[][] veh = TextureRegion.split(vehiclesTexture, 256, 256);
+
         icons = new TextureRegion[24];
         icons[0] = new TextureRegion(loadTexture("animals/Butterfly_128x128.png"));
         icons[1] = new TextureRegion(loadTexture("animals/Dolphin_128x128.png"));
@@ -92,7 +92,7 @@ public class AssetManager {
         for (int i = 0; i < veh.length; i++) {
             TextureRegion[] textureRegions = veh[i];
             for (int j = 0; j < textureRegions.length; j++) {
-                icons[8+count] = textureRegions[j];
+                icons[8 + count] = textureRegions[j];
                 count++;
             }
         }
@@ -100,14 +100,15 @@ public class AssetManager {
         // Particle effects
         fireworks = new ParticleEffect();
         fireworks.load(getFileHandle("fireworks"), getFileHandle(""));
-        
+
         // sounds
         sndFlipCard = Gdx.audio.newSound(getFileHandle("flipcard.ogg"));
         sndCheer = Gdx.audio.newSound(getFileHandle("drums.ogg"));
         sndDing = Gdx.audio.newSound(getFileHandle("ding.ogg"));
     }
 
-    /** Little helper method for porting the asset manager to android
+    /**
+     * Little helper method for porting the asset manager to android
      *
      * @param file the file to load
      * @return a file handle
@@ -118,7 +119,7 @@ public class AssetManager {
 //        else
         return Gdx.files.internal(file); // for android use
     }
-    
+
     private Texture loadTexture(String fileHandle) {
         Texture tmp;
         tmp = new Texture(getFileHandle(fileHandle));
@@ -130,13 +131,16 @@ public class AssetManager {
      * Shuffle card icons to see something new every time.
      */
     public void shuffleIcons() {
-        ArrayList<TextureRegion> toShuffle = new ArrayList<TextureRegion>(icons.length);
-        for (int i = 0; i < icons.length; i++) {
-            toShuffle.add(icons[i]);
-        }
-        Collections.shuffle(toShuffle);
-        for (int i = 0; i < icons.length; i++) {
-            icons[i] = toShuffle.get(i);
+        TextureRegion tmp;
+        int a, b;
+        for (int k = 0; k < 25; k++) {
+            a = (int) Math.floor(Math.random()*icons.length);
+            b = (int) Math.floor(Math.random()*icons.length);
+            if (a!=b) {
+                tmp = icons[a];
+                icons[a] = icons[b];
+                icons[b] = tmp;
+            }
         }
     }
 }
